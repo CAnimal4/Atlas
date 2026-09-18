@@ -21,10 +21,10 @@
 
   const formUrl = (base, plan, notice) => {
     const selected = selectedApp();
-    if (!selected) { showTargetError(); return ''; }
+    if (plan === 'moderator' && !selected) { showTargetError(); return ''; }
     const url = new URL(base);
     url.searchParams.set('form_type', plan === 'moderator' ? 'moderator_application' : 'premium_access_request');
-    url.searchParams.set('app_name', appNames[selected]);
+    url.searchParams.set('app_name', plan === 'moderator' ? appNames[selected] : (appNames[appKey] || 'All apps'));
     url.searchParams.set('plan', plan);
     url.searchParams.set('source', source);
     url.searchParams.set('page_url', returnTo.replace('premium_request_submitted', notice));
@@ -38,6 +38,7 @@
   });
   document.querySelector('[data-plan="moderator"]')?.addEventListener('click', (event) => {
     event.preventDefault();
+    if (target) { target.hidden = false; const wrapper = target.closest('.app-target'); if (wrapper) { wrapper.hidden = false; wrapper.style.display = 'grid'; } }
     const url = formUrl('https://tally.so/r/EkpBb2', 'moderator', 'moderator_application_submitted');
     if (url) window.location.assign(url);
   });
