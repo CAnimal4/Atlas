@@ -1,4 +1,20 @@
 (() => {
+  const notice = new URLSearchParams(window.location.search).get('atlas_notice');
+  const messages = {
+    feedback_submitted: 'Feedback submitted — thanks for helping improve Atlas.',
+    premium_request_submitted: 'Premium request submitted — we’ll get in touch soon.',
+    moderator_application_submitted: 'Moderator application submitted — we’ll review it soon.'
+  };
+  if (messages[notice]) {
+    const banner = document.createElement('div');
+    banner.className = 'return-notice';
+    banner.setAttribute('role', 'status');
+    banner.textContent = messages[notice];
+    document.querySelector('.shell')?.prepend(banner);
+    const cleanUrl = new URL(window.location.href);
+    cleanUrl.searchParams.delete('atlas_notice');
+    window.history.replaceState({}, '', cleanUrl);
+  }
   const button = document.getElementById('navMoreButton');
   const menu = document.getElementById('navMoreMenu');
   if (!button || !menu) return;

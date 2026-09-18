@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Access plans — Atlas</title>
+  <meta name="theme-color" content="#0f3557" />
+  <link rel="icon" href="assets/atlas-mark.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="plans.css" />
+</head>
+<body class="plans-page">
+  <main class="shell plans-shell">
+    <nav class="app-nav" aria-label="Learning apps">
+      <a class="nav-brand" href="./" aria-label="Atlas home"><img src="assets/atlas-mark.png" alt="" /> <span>Atlas</span></a>
+      <div class="nav-apps" aria-label="Apps">
+        <a href="https://clarospanish.vercel.app"><img src="assets/claro-mark.png" alt="" /> Claro</a>
+        <a href="https://vertexmath.vercel.app"><img src="assets/vertex-mark.png" alt="" /> Vertex</a>
+        <a href="https://meridianhistory.vercel.app"><img src="assets/meridian-mark.png" alt="" /> Meridian</a>
+      </div>
+      <a class="nav-more plans-back" href="./">Back to Atlas</a>
+    </nav>
+
+    <section class="plans-hero" aria-labelledby="plans-title">
+      <p class="eyebrow">One simple access page</p>
+      <h1 id="plans-title">Choose the kind of access that fits.</h1>
+      <p>Start free, ask for the deeper practice space, or apply to help care for the learning community. You can still unlock access with a password inside any app.</p>
+    </section>
+
+    <section class="plans-grid" aria-label="Atlas access plans">
+      <article class="plan-card free-plan">
+        <div class="plan-kicker">Start here</div>
+        <h2>Free</h2>
+        <p class="plan-summary">The essentials for steady practice.</p>
+        <ul>
+          <li>Core lessons and practice sessions</li>
+          <li>Saved progress on your device</li>
+          <li>Feedback and module requests</li>
+        </ul>
+        <a class="plan-button secondary-plan" href="./">Open Atlas</a>
+      </article>
+
+      <article class="plan-card premium-plan">
+        <div class="plan-kicker">Go further</div>
+        <h2>Premium</h2>
+        <p class="plan-summary">More depth, more variety, more room to grow.</p>
+        <ul>
+          <li>Extended question pools and advanced materials</li>
+          <li>Premium modules across the learning apps</li>
+          <li>Server-verified access on each app</li>
+        </ul>
+        <a class="plan-button primary-plan" data-plan="premium" href="#">Get in touch</a>
+      </article>
+
+      <article class="plan-card moderator-plan">
+        <div class="plan-kicker">Help shape the space</div>
+        <h2>Moderator</h2>
+        <p class="plan-summary">A trusted role for thoughtful community care.</p>
+        <ul>
+          <li>Everything in Premium</li>
+          <li>Review and request question changes</li>
+          <li>Help keep content accurate and welcoming</li>
+        </ul>
+        <a class="plan-button moderator-button" data-plan="moderator" href="#">Apply as moderator</a>
+      </article>
+    </section>
+
+    <section class="plans-note" aria-label="Access notes">
+      <strong>Already have a pass?</strong>
+      <span>Open any app and enter it from the access button. Moderator and Admin tools appear automatically when the server verifies the matching role.</span>
+    </section>
+    <footer><span>Atlas</span><span>Access is reviewed with care. <a href="https://tally.so/r/68grLO?form_type=feedback&app_name=atlas&source=atlas_plans&page_url=https%3A%2F%2Fatlaslearning.vercel.app%2Fplans">Feedback</a> · <a href="credits.html">Credits</a></span></footer>
+  </main>
+  <script src="plans.js"></script>
+</body>
+</html>
