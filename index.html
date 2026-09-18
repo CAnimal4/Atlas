@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas — Learning apps</title>
+  <meta name="theme-color" content="#0f3557" />
+  <meta name="application-name" content="Atlas" />
+  <link rel="icon" href="assets/atlas-mark.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/atlas-mark.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <nav class="app-nav" aria-label="Learning apps">
+      <a class="nav-brand" href="./" aria-label="Atlas home"><img src="assets/atlas-mark.png" alt="" /> <span>Atlas</span></a>
+      <div class="nav-apps">
+        <a href="https://clarospanish.vercel.app"><img src="../Claro/assets/claro-mark.png" alt="" /> Claro</a>
+        <a href="https://vertexmath.vercel.app"><img src="../Vertex/assets/vertex-mark.png" alt="" /> Vertex</a>
+        <a href="../History/"><img src="../History/assets/meridian-mark.png" alt="" /> Meridian <small>soon</small></a>
+        <a class="nav-credits" href="credits.html">Credits</a>
+      </div>
+    </nav>
+    <header class="hero">
+      <img class="brand-mark" src="assets/atlas-mark.png" alt="" aria-hidden="true" />
+      <div>
+        <p class="eyebrow">Three subjects. One clear place.</p>
+        <h1>Atlas</h1>
+        <p class="lede">Open the right space and get straight to learning.</p>
+      </div>
+    </header>
+    <section aria-labelledby="apps-heading">
+      <div class="section-heading"><p class="eyebrow">Explore the collection</p><h2 id="apps-heading">Choose an app</h2></div>
+      <div class="app-grid">
+        <a class="app-card claro" href="https://clarospanish.vercel.app">
+          <div class="app-icon"><img src="../Claro/assets/claro-mark.png" alt="" /></div><div><span class="label">Spanish learning</span><h3>Claro</h3><p>Short, focused practice for building Spanish confidence.</p></div><span class="arrow" aria-hidden="true">Open ↗</span>
+        </a>
+        <a class="app-card vertex" href="https://vertexmath.vercel.app">
+          <div class="app-icon"><img src="../Vertex/assets/vertex-mark.png" alt="" /></div><div><span class="label">Math learning</span><h3>Vertex</h3><p>Focused geometry practice, from relationships to proofs.</p></div><span class="arrow" aria-hidden="true">Open ↗</span>
+        </a>
+        <a class="app-card history" href="../History/">
+          <div class="app-icon"><img src="../History/assets/meridian-mark.png" alt="" /></div><div><span class="label">Coming next</span><h3>Meridian</h3><p>AP Human Geography through place, people, and patterns.</p></div><span class="arrow" aria-hidden="true">Preview →</span>
+        </a>
+      </div>
+    </section>
+    <footer><span>Atlas</span><span>Find your subject. Keep moving. <a href="credits.html">Credits</a></span></footer>
+  </main>
+</body>
+</html>
