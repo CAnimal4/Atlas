@@ -1,4 +1,14 @@
 (() => {
+  const releaseBanner = document.getElementById('releaseBanner');
+  const releaseBannerClose = document.getElementById('releaseBannerClose');
+  const releaseBannerCookie = 'atlas_release_banner_dismissed';
+  const hasReleaseBannerCookie = document.cookie.split('; ').some((part) => part.startsWith(`${releaseBannerCookie}=`));
+  if (hasReleaseBannerCookie) releaseBanner?.remove();
+  releaseBannerClose?.addEventListener('click', () => {
+    document.cookie = `${releaseBannerCookie}=1; max-age=31536000; path=/; SameSite=Lax`;
+    releaseBanner?.remove();
+  });
+
   const notice = new URLSearchParams(window.location.search).get('atlas_notice');
   const messages = {
     feedback_submitted: 'Feedback submitted — thanks for helping improve Atlas.',
