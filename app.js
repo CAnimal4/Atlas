@@ -3,10 +3,14 @@
   const releaseBannerClose = document.getElementById('releaseBannerClose');
   const releaseBannerCookie = 'atlas_release_banner_dismissed';
   const hasReleaseBannerCookie = document.cookie.split('; ').some((part) => part.startsWith(`${releaseBannerCookie}=`));
-  if (hasReleaseBannerCookie) releaseBanner?.remove();
+  const dismissReleaseBanner = () => {
+    document.documentElement.classList.add('release-banner-dismissed');
+    releaseBanner?.remove();
+  };
+  if (hasReleaseBannerCookie) dismissReleaseBanner();
   releaseBannerClose?.addEventListener('click', () => {
     document.cookie = `${releaseBannerCookie}=1; max-age=31536000; path=/; SameSite=Lax`;
-    releaseBanner?.remove();
+    dismissReleaseBanner();
   });
 
   const notice = new URLSearchParams(window.location.search).get('atlas_notice');
