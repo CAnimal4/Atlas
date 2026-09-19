@@ -17,4 +17,5 @@
 .release-banner-dismissed .shell{padding-top:20px!important}
 .release-banner-dismissed .app-nav{top:18px!important;margin:0 0 70px!important}
 .release-banner:not([hidden]) + .shell .app-nav{margin-top:-45px!important}
+.release-banner:not([hidden]) + .shell{margin-top:-60px!important}
 @media(max-width:720px){.release-banner-dismissed .app-nav{position:static!important;top:auto!important;margin:0 0 56px!important}}
