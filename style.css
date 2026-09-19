@@ -10,6 +10,7 @@
  .release-banner{position:fixed;top:14px;left:50%;z-index:20;display:flex;align-items:center;gap:18px;width:min(calc(100% - 32px),760px);padding:10px 12px 10px 18px;transform:translateX(-50%);border:1px solid #ffffffb8;border-radius:0 0 20px 20px;background:#0f3557e8;color:#f5fbfa;box-shadow:0 14px 30px #0f35572b;backdrop-filter:blur(14px);font-size:.86rem;line-height:1.35}.release-banner p{margin:0;flex:1}.release-banner p>span{margin-right:9px;color:#9ce7db;font-size:.66rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.release-banner a{color:#fff;text-underline-offset:3px}.release-banner button{display:grid;place-items:center;width:28px;height:28px;padding:0;border:1px solid #ffffff66;border-radius:50%;background:#ffffff14;color:#fff;font-size:1.25rem;line-height:1;cursor:pointer}.release-banner button:hover,.release-banner button:focus-visible{background:#ffffff2b;outline:2px solid #9ce7db;outline-offset:2px}@media(max-width:560px){.release-banner{top:8px;width:calc(100% - 16px);gap:10px;padding-left:14px;font-size:.78rem}.release-banner p>span{display:block;margin:0 0 2px}}
 /* Keep the release notice in its own sticky layer above the navigation. */
 .release-banner{position:sticky!important;top:0!important;left:auto;width:min(100%,760px);margin:0 auto;transform:none;border-radius:0 0 20px 20px}
-.app-nav{top:76px!important;margin-top:24px}
+.shell{padding-top:18px!important}
+.app-nav{top:76px!important;margin-top:0!important}
 @media(max-width:720px){.app-nav{position:sticky!important;top:76px!important;margin:24px 0 56px}}
 @media(max-width:560px){.release-banner{top:0!important;width:100%;border-radius:0 0 16px 16px}.app-nav{top:70px!important}}
