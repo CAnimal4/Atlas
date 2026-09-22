@@ -1,4 +1,24 @@
 (() => {
+  const track = (eventName, data = {}) => {
+    if (typeof window.umami?.track === 'function') window.umami.track(eventName, data);
+  };
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a');
+    if (!link) return;
+    const href = link.href || '';
+    const text = link.textContent.trim().replace(/\s+/g, ' ').slice(0, 80);
+    const appMatch = href.match(/https:\/\/([a-z]+)(?:math|spanish|history)\.vercel\.app/);
+    if (appMatch) {
+      track('app_opened', { app: appMatch[1], location: window.location.pathname });
+      track('practice_session_started', { app: appMatch[1], source: 'atlas' });
+    } else if (href.includes('tally.so')) {
+      track('feedback_or_access_request_clicked', { text, location: window.location.pathname });
+    } else if (link.closest('.nav-more-menu')) {
+      track('navigation_link_clicked', { text, location: window.location.pathname });
+    }
+  });
+
   const releaseBanner = document.getElementById('releaseBanner');
   const releaseBannerClose = document.getElementById('releaseBannerClose');
   const releaseBannerCookie = 'atlas_release_banner_dismissed';
@@ -10,6 +30,7 @@
   if (hasReleaseBannerCookie) dismissReleaseBanner();
   releaseBannerClose?.addEventListener('click', () => {
     document.cookie = `${releaseBannerCookie}=1; max-age=31536000; path=/; SameSite=Lax`;
+    track('release_banner_dismissed');
     dismissReleaseBanner();
   });
 
